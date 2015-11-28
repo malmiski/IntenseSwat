@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58DCD6401C08BC6500A8E537 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DCD63F1C08BC6500A8E537 /* GameScene.swift */; };
+		58DCD6441C08BC7100A8E537 /* CameraScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DCD6431C08BC7100A8E537 /* CameraScene.swift */; };
+		58DCD6461C08BC8100A8E537 /* HighscoreScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DCD6451C08BC8100A8E537 /* HighscoreScene.swift */; };
+		58DCD64E1C08BE7100A8E537 /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DCD64D1C08BE7100A8E537 /* SceneManager.swift */; };
+		58F85B321C08F39A002773A7 /* HighscoreTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F85B311C08F39A002773A7 /* HighscoreTemplate.swift */; };
 		5B121030197484FA004C1E1D /* IntenseSwatActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B12102F197484FA004C1E1D /* IntenseSwatActivity.m */; };
 		5B121038197487F2004C1E1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B737893E1807617C0076A88C /* AppDelegate.m */; };
 		7A046D7919E84ED5004C4763 /* MainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A046D7519E84C36004C4763 /* MainScene.swift */; };
@@ -148,6 +153,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		58DCD63F1C08BC6500A8E537 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		58DCD6431C08BC7100A8E537 /* CameraScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraScene.swift; sourceTree = "<group>"; };
+		58DCD6451C08BC8100A8E537 /* HighscoreScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighscoreScene.swift; sourceTree = "<group>"; };
+		58DCD64D1C08BE7100A8E537 /* SceneManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
+		58F85B311C08F39A002773A7 /* HighscoreTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighscoreTemplate.swift; sourceTree = "<group>"; };
 		5B12100919748273004C1E1D /* libEGL.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libEGL.so; path = /usr/lib/armv7a/libEGL.so; sourceTree = SDKROOT; };
 		5B12100F197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
 		5B121011197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
@@ -436,6 +446,11 @@
 			children = (
 				7A40362019DDEF0D007B6E8F /* Platforms */,
 				7A046D7519E84C36004C4763 /* MainScene.swift */,
+				58DCD63F1C08BC6500A8E537 /* GameScene.swift */,
+				58DCD6431C08BC7100A8E537 /* CameraScene.swift */,
+				58DCD6451C08BC8100A8E537 /* HighscoreScene.swift */,
+				58DCD64D1C08BE7100A8E537 /* SceneManager.swift */,
+				58F85B311C08F39A002773A7 /* HighscoreTemplate.swift */,
 				D352B48019EC608A00829775 /* MetalShaders */,
 			);
 			name = Source;
@@ -815,6 +830,11 @@
 			files = (
 				B73789871807631A0076A88C /* main.m in Sources */,
 				7A046D7919E84ED5004C4763 /* MainScene.swift in Sources */,
+				58F85B321C08F39A002773A7 /* HighscoreTemplate.swift in Sources */,
+				58DCD6441C08BC7100A8E537 /* CameraScene.swift in Sources */,
+				58DCD64E1C08BE7100A8E537 /* SceneManager.swift in Sources */,
+				58DCD6461C08BC8100A8E537 /* HighscoreScene.swift in Sources */,
+				58DCD6401C08BC6500A8E537 /* GameScene.swift in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
