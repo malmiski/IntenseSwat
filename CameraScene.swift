@@ -28,10 +28,10 @@ class CameraScene: CCNode, UIImagePickerControllerDelegate, UINavigationControll
     
     //func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
-        let rect:CGRect = CGRect(origin: CGPoint(x:0,y:0), size: CGSize(width:250,height:250))
+        let rect:CGRect = CGRect(origin: CGPoint(x:0,y:0), size: CGSize(width:pictureFrame!.contentSize.width-30,height:pictureFrame!.contentSize.height-30))
         UIGraphicsBeginImageContext(rect.size)
         image.drawInRect(rect)
-        let texture:CCTexture = CCTexture(CGImage: UIGraphicsGetImageFromCurrentImageContext().CGImage!, contentScale:2.0)
+        let texture:CCTexture = CCTexture(CGImage: UIGraphicsGetImageFromCurrentImageContext().CGImage!, contentScale:1.0)
         UIGraphicsEndImageContext()
         pictureFrame!.removeAllChildren()
         let picture = CCSprite(texture: texture)
