@@ -4,7 +4,8 @@ class MainScene: CCNode {
 
     
     func continuous(){
-        SceneManager.instance.showScene("GameScene")
+        //SceneManager.instance.showScene("GameScene")
+        SceneManager.instance.showGameSceneContinuous();
     }
     
     func win(){
