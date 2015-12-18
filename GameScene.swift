@@ -32,4 +32,15 @@ class GameScene: CCNode{
     
     }
     
+    // This is called when the continuous option is selected
+    func startContinuous(){
+    
+    }
+    // This is called when levels are requested
+    func startWin(){
+    
+    }
+    func generateFly() -> FlyingFly{
+        return CCBReader.load("FlyingFly") as! FlyingFly
+    }
 }

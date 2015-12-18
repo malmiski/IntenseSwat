@@ -26,7 +26,7 @@ class SceneManager{
         let scene:GameScene = showScene("GameScene", selectorToPerform: "startContinuous")
     }
     func showGameSceneWin(){
-        let scene:GameScene = showScene("GameScene", selectorToPerform: "startContinuous")
+        let scene:GameScene = showScene("GameScene", selectorToPerform: "startWin")
     }
     func showCameraScene(){
         let scene:CameraScene = showScene("CameraScene")

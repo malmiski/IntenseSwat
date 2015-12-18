@@ -11,6 +11,10 @@
 		58DCD6441C08BC7100A8E537 /* CameraScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DCD6431C08BC7100A8E537 /* CameraScene.swift */; };
 		58DCD6461C08BC8100A8E537 /* HighscoreScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DCD6451C08BC8100A8E537 /* HighscoreScene.swift */; };
 		58DCD64E1C08BE7100A8E537 /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DCD64D1C08BE7100A8E537 /* SceneManager.swift */; };
+		58F07A901C13DC4200DFFAF4 /* Scores.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 58F07A8E1C13DC4200DFFAF4 /* Scores.xcdatamodeld */; };
+		58F07A951C13DF3000DFFAF4 /* Highscores+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F07A931C13DF3000DFFAF4 /* Highscores+CoreDataProperties.swift */; };
+		58F07A961C13DF3000DFFAF4 /* Highscores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F07A941C13DF3000DFFAF4 /* Highscores.swift */; };
+		58F07A981C13F58000DFFAF4 /* FlyingFly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F07A971C13F58000DFFAF4 /* FlyingFly.swift */; };
 		58F85B321C08F39A002773A7 /* HighscoreTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F85B311C08F39A002773A7 /* HighscoreTemplate.swift */; };
 		5B121030197484FA004C1E1D /* IntenseSwatActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B12102F197484FA004C1E1D /* IntenseSwatActivity.m */; };
 		5B121038197487F2004C1E1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B737893E1807617C0076A88C /* AppDelegate.m */; };
@@ -160,6 +164,10 @@
 		58DCD6431C08BC7100A8E537 /* CameraScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraScene.swift; sourceTree = "<group>"; };
 		58DCD6451C08BC8100A8E537 /* HighscoreScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighscoreScene.swift; sourceTree = "<group>"; };
 		58DCD64D1C08BE7100A8E537 /* SceneManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
+		58F07A8F1C13DC4200DFFAF4 /* Scores.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Scores.xcdatamodel; sourceTree = "<group>"; };
+		58F07A931C13DF3000DFFAF4 /* Highscores+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Highscores+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		58F07A941C13DF3000DFFAF4 /* Highscores.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Highscores.swift; sourceTree = "<group>"; };
+		58F07A971C13F58000DFFAF4 /* FlyingFly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlyingFly.swift; sourceTree = "<group>"; };
 		58F85B311C08F39A002773A7 /* HighscoreTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighscoreTemplate.swift; sourceTree = "<group>"; };
 		5B12100919748273004C1E1D /* libEGL.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libEGL.so; path = /usr/lib/armv7a/libEGL.so; sourceTree = SDKROOT; };
 		5B12100F197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
@@ -468,7 +476,11 @@
 				58DCD6451C08BC8100A8E537 /* HighscoreScene.swift */,
 				58DCD64D1C08BE7100A8E537 /* SceneManager.swift */,
 				58F85B311C08F39A002773A7 /* HighscoreTemplate.swift */,
+				58F07A931C13DF3000DFFAF4 /* Highscores+CoreDataProperties.swift */,
+				58F07A941C13DF3000DFFAF4 /* Highscores.swift */,
 				D352B48019EC608A00829775 /* MetalShaders */,
+				58F07A8E1C13DC4200DFFAF4 /* Scores.xcdatamodeld */,
+				58F07A971C13F58000DFFAF4 /* FlyingFly.swift */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -846,16 +858,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58F07A981C13F58000DFFAF4 /* FlyingFly.swift in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				7A046D7919E84ED5004C4763 /* MainScene.swift in Sources */,
 				8162CC841C0A97E3004E80CE /* GameObject.swift in Sources */,
 				8162CC881C0A9B5F004E80CE /* EnemyCharacter.swift in Sources */,
 				58F85B321C08F39A002773A7 /* HighscoreTemplate.swift in Sources */,
 				58DCD6441C08BC7100A8E537 /* CameraScene.swift in Sources */,
+				58F07A961C13DF3000DFFAF4 /* Highscores.swift in Sources */,
 				8162CC861C0A99EF004E80CE /* GameCharacter.swift in Sources */,
 				58DCD64E1C08BE7100A8E537 /* SceneManager.swift in Sources */,
 				58DCD6461C08BC8100A8E537 /* HighscoreScene.swift in Sources */,
+				58F07A951C13DF3000DFFAF4 /* Highscores+CoreDataProperties.swift in Sources */,
 				58DCD6401C08BC6500A8E537 /* GameScene.swift in Sources */,
+				58F07A901C13DC4200DFFAF4 /* Scores.xcdatamodeld in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1241,6 +1257,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		58F07A8E1C13DC4200DFFAF4 /* Scores.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				58F07A8F1C13DC4200DFFAF4 /* Scores.xcdatamodel */,
+			);
+			currentVersion = 58F07A8F1C13DC4200DFFAF4 /* Scores.xcdatamodel */;
+			path = Scores.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B77F1B2617B978D7009739AE /* Project object */;
 }
