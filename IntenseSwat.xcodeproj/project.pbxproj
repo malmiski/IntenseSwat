@@ -15,6 +15,11 @@
 		58F07A951C13DF3000DFFAF4 /* Highscores+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F07A931C13DF3000DFFAF4 /* Highscores+CoreDataProperties.swift */; };
 		58F07A961C13DF3000DFFAF4 /* Highscores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F07A941C13DF3000DFFAF4 /* Highscores.swift */; };
 		58F07A981C13F58000DFFAF4 /* FlyingFly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F07A971C13F58000DFFAF4 /* FlyingFly.swift */; };
+		58F5986C1C24EB9C0099674F /* UserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F5986A1C24EB9C0099674F /* UserImage.swift */; };
+		58F598701C24FE200099674F /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F5986F1C24FE200099674F /* CoreDataController.swift */; };
+		58F598741C25D4370099674F /* UserImage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F598731C25D4370099674F /* UserImage+CoreDataProperties.swift */; };
+		58F598781C25E9A80099674F /* GameType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F598771C25E9A80099674F /* GameType.swift */; };
+		58F5987A1C27A3120099674F /* GameMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F598791C27A3120099674F /* GameMenu.swift */; };
 		58F85B321C08F39A002773A7 /* HighscoreTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F85B311C08F39A002773A7 /* HighscoreTemplate.swift */; };
 		5B121030197484FA004C1E1D /* IntenseSwatActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B12102F197484FA004C1E1D /* IntenseSwatActivity.m */; };
 		5B121038197487F2004C1E1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B737893E1807617C0076A88C /* AppDelegate.m */; };
@@ -168,6 +173,11 @@
 		58F07A931C13DF3000DFFAF4 /* Highscores+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Highscores+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		58F07A941C13DF3000DFFAF4 /* Highscores.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Highscores.swift; sourceTree = "<group>"; };
 		58F07A971C13F58000DFFAF4 /* FlyingFly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlyingFly.swift; sourceTree = "<group>"; };
+		58F5986A1C24EB9C0099674F /* UserImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserImage.swift; sourceTree = "<group>"; };
+		58F5986F1C24FE200099674F /* CoreDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
+		58F598731C25D4370099674F /* UserImage+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserImage+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		58F598771C25E9A80099674F /* GameType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameType.swift; sourceTree = "<group>"; };
+		58F598791C27A3120099674F /* GameMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMenu.swift; sourceTree = "<group>"; };
 		58F85B311C08F39A002773A7 /* HighscoreTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighscoreTemplate.swift; sourceTree = "<group>"; };
 		5B12100919748273004C1E1D /* libEGL.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libEGL.so; path = /usr/lib/armv7a/libEGL.so; sourceTree = SDKROOT; };
 		5B12100F197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
@@ -471,6 +481,7 @@
 				8162CC801C0A97A3004E80CE /* Model */,
 				7A40362019DDEF0D007B6E8F /* Platforms */,
 				7A046D7519E84C36004C4763 /* MainScene.swift */,
+				58F598771C25E9A80099674F /* GameType.swift */,
 				58DCD63F1C08BC6500A8E537 /* GameScene.swift */,
 				58DCD6431C08BC7100A8E537 /* CameraScene.swift */,
 				58DCD6451C08BC8100A8E537 /* HighscoreScene.swift */,
@@ -478,9 +489,13 @@
 				58F85B311C08F39A002773A7 /* HighscoreTemplate.swift */,
 				58F07A931C13DF3000DFFAF4 /* Highscores+CoreDataProperties.swift */,
 				58F07A941C13DF3000DFFAF4 /* Highscores.swift */,
+				58F598731C25D4370099674F /* UserImage+CoreDataProperties.swift */,
+				58F5986A1C24EB9C0099674F /* UserImage.swift */,
 				D352B48019EC608A00829775 /* MetalShaders */,
 				58F07A8E1C13DC4200DFFAF4 /* Scores.xcdatamodeld */,
 				58F07A971C13F58000DFFAF4 /* FlyingFly.swift */,
+				58F5986F1C24FE200099674F /* CoreDataController.swift */,
+				58F598791C27A3120099674F /* GameMenu.swift */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -863,15 +878,20 @@
 				7A046D7919E84ED5004C4763 /* MainScene.swift in Sources */,
 				8162CC841C0A97E3004E80CE /* GameObject.swift in Sources */,
 				8162CC881C0A9B5F004E80CE /* EnemyCharacter.swift in Sources */,
+				58F598781C25E9A80099674F /* GameType.swift in Sources */,
 				58F85B321C08F39A002773A7 /* HighscoreTemplate.swift in Sources */,
 				58DCD6441C08BC7100A8E537 /* CameraScene.swift in Sources */,
 				58F07A961C13DF3000DFFAF4 /* Highscores.swift in Sources */,
+				58F598741C25D4370099674F /* UserImage+CoreDataProperties.swift in Sources */,
 				8162CC861C0A99EF004E80CE /* GameCharacter.swift in Sources */,
 				58DCD64E1C08BE7100A8E537 /* SceneManager.swift in Sources */,
 				58DCD6461C08BC8100A8E537 /* HighscoreScene.swift in Sources */,
 				58F07A951C13DF3000DFFAF4 /* Highscores+CoreDataProperties.swift in Sources */,
 				58DCD6401C08BC6500A8E537 /* GameScene.swift in Sources */,
+				58F598701C24FE200099674F /* CoreDataController.swift in Sources */,
+				58F5987A1C27A3120099674F /* GameMenu.swift in Sources */,
 				58F07A901C13DC4200DFFAF4 /* Scores.xcdatamodeld in Sources */,
+				58F5986C1C24EB9C0099674F /* UserImage.swift in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

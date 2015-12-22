@@ -9,7 +9,7 @@ class MainScene: CCNode {
     }
     
     func win(){
-        SceneManager.instance.showScene("GameScene")
+        SceneManager.instance.showGameSceneWin()
     }
     
     func highscores(){
@@ -24,5 +24,8 @@ class MainScene: CCNode {
         SceneManager.instance.showScene("CameraScene")
     }
    
+    func didLoadFromCCB(){
+        CoreDataController.instance;
+    }
     
 }
