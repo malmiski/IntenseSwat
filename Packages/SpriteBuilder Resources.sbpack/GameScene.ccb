@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>7</integer>
+	<integer>8</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -149,8 +149,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>60</real>
-							<real>318.66665649414062</real>
+							<real>44</real>
+							<real>217.66665649414062</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -471,7 +471,7 @@
 			</dict>
 			<dict>
 				<key>UUID</key>
-				<integer>6</integer>
+				<integer>7</integer>
 				<key>baseClass</key>
 				<string>CCButton</string>
 				<key>children</key>
@@ -501,8 +501,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>66</real>
-							<real>155</real>
+							<real>123</real>
+							<real>312</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -539,7 +539,7 @@
 						<string>Block</string>
 						<key>value</key>
 						<array>
-							<string>toggleLayer</string>
+							<string>genFly</string>
 							<integer>1</integer>
 						</array>
 					</dict>
@@ -584,7 +584,7 @@
 						<string>String</string>
 						<key>value</key>
 						<array>
-							<string>Toggle Layer</string>
+							<string>Generate Fly</string>
 							<false/>
 						</array>
 					</dict>

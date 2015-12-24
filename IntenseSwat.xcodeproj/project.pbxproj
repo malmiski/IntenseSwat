@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		587CDCA11C2B6417009F3D2F /* HUDStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587CDCA01C2B6417009F3D2F /* HUDStatusBar.swift */; };
+		587CDCA51C2B7B60009F3D2F /* HUDBottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587CDCA41C2B7B60009F3D2F /* HUDBottomBar.swift */; };
 		58DCD6401C08BC6500A8E537 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DCD63F1C08BC6500A8E537 /* GameScene.swift */; };
 		58DCD6441C08BC7100A8E537 /* CameraScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DCD6431C08BC7100A8E537 /* CameraScene.swift */; };
 		58DCD6461C08BC8100A8E537 /* HighscoreScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DCD6451C08BC8100A8E537 /* HighscoreScene.swift */; };
@@ -165,6 +167,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		587CDCA01C2B6417009F3D2F /* HUDStatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDStatusBar.swift; sourceTree = "<group>"; };
+		587CDCA41C2B7B60009F3D2F /* HUDBottomBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDBottomBar.swift; sourceTree = "<group>"; };
 		58DCD63F1C08BC6500A8E537 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		58DCD6431C08BC7100A8E537 /* CameraScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraScene.swift; sourceTree = "<group>"; };
 		58DCD6451C08BC8100A8E537 /* HighscoreScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighscoreScene.swift; sourceTree = "<group>"; };
@@ -496,6 +500,8 @@
 				58F07A971C13F58000DFFAF4 /* FlyingFly.swift */,
 				58F5986F1C24FE200099674F /* CoreDataController.swift */,
 				58F598791C27A3120099674F /* GameMenu.swift */,
+				587CDCA01C2B6417009F3D2F /* HUDStatusBar.swift */,
+				587CDCA41C2B7B60009F3D2F /* HUDBottomBar.swift */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -875,11 +881,13 @@
 			files = (
 				58F07A981C13F58000DFFAF4 /* FlyingFly.swift in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
+				587CDCA51C2B7B60009F3D2F /* HUDBottomBar.swift in Sources */,
 				7A046D7919E84ED5004C4763 /* MainScene.swift in Sources */,
 				8162CC841C0A97E3004E80CE /* GameObject.swift in Sources */,
 				8162CC881C0A9B5F004E80CE /* EnemyCharacter.swift in Sources */,
 				58F598781C25E9A80099674F /* GameType.swift in Sources */,
 				58F85B321C08F39A002773A7 /* HighscoreTemplate.swift in Sources */,
+				587CDCA11C2B6417009F3D2F /* HUDStatusBar.swift in Sources */,
 				58DCD6441C08BC7100A8E537 /* CameraScene.swift in Sources */,
 				58F07A961C13DF3000DFFAF4 /* Highscores.swift in Sources */,
 				58F598741C25D4370099674F /* UserImage+CoreDataProperties.swift in Sources */,

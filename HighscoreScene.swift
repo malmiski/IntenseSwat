@@ -38,13 +38,12 @@ class HighscoreScene: CCNode{
         for(var i = 0; i<scores.count*30; i++){
             let j = i;
             i=i%scores.count;
-//            print(scores[i])
             let score = scores[i]["score"] as! Int
             let date = scores[i]["date"] as! NSDate
             let node = CCBReader.load("HighscoreTemplate") as! HighscoreTemplate
             node.colorNode!.contentSizeInPoints = CGSize(width:CCDirector.sharedDirector().viewSize().width, height:14)
             node.position = CGPoint(x:0,y:CGFloat(j*16))
-            print(node.position)
+
             node.dateLabel!.string = dateFormat.stringFromDate(date)
             node.scoreLabel!.string = "\(score)"
             node.zOrder = -999;
