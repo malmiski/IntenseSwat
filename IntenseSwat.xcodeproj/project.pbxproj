@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		586235921C30EB5F006ED85C /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586235911C30EB5F006ED85C /* GameManager.swift */; };
 		587CDCA11C2B6417009F3D2F /* HUDStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587CDCA01C2B6417009F3D2F /* HUDStatusBar.swift */; };
 		587CDCA51C2B7B60009F3D2F /* HUDBottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587CDCA41C2B7B60009F3D2F /* HUDBottomBar.swift */; };
 		58DCD6401C08BC6500A8E537 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DCD63F1C08BC6500A8E537 /* GameScene.swift */; };
@@ -167,6 +168,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		586235911C30EB5F006ED85C /* GameManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		587CDCA01C2B6417009F3D2F /* HUDStatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDStatusBar.swift; sourceTree = "<group>"; };
 		587CDCA41C2B7B60009F3D2F /* HUDBottomBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDBottomBar.swift; sourceTree = "<group>"; };
 		58DCD63F1C08BC6500A8E537 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -502,6 +504,7 @@
 				58F598791C27A3120099674F /* GameMenu.swift */,
 				587CDCA01C2B6417009F3D2F /* HUDStatusBar.swift */,
 				587CDCA41C2B7B60009F3D2F /* HUDBottomBar.swift */,
+				586235911C30EB5F006ED85C /* GameManager.swift */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -891,6 +894,7 @@
 				58DCD6441C08BC7100A8E537 /* CameraScene.swift in Sources */,
 				58F07A961C13DF3000DFFAF4 /* Highscores.swift in Sources */,
 				58F598741C25D4370099674F /* UserImage+CoreDataProperties.swift in Sources */,
+				586235921C30EB5F006ED85C /* GameManager.swift in Sources */,
 				8162CC861C0A99EF004E80CE /* GameCharacter.swift in Sources */,
 				58DCD64E1C08BE7100A8E537 /* SceneManager.swift in Sources */,
 				58DCD6461C08BC8100A8E537 /* HighscoreScene.swift in Sources */,
