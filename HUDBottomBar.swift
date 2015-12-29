@@ -18,4 +18,17 @@ class HUDBottomBar:CCNode{
         resetButton!.position = CGPoint(x:0.4*size.width,y:0)
         muteButton!.position = CGPoint(x:0.7*size.width,y:0)
     }
+    
+    func pause(){
+        let gameMenu = CCBReader.load("GameMenu") as! GameMenu
+        SceneManager.instance.showLayer(gameMenu)
+    }
+    
+    func reset(){
+    
+    }
+    
+    func mute(){
+    
+    }
 }

@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>26</integer>
+	<integer>42</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -127,8 +127,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>0.0</real>
-							<real>0.0</real>
+							<real>53</real>
+							<real>-56</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -174,7 +174,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>Fly-Swatter.png</string>
+							<string>Fly-Swatter-Bigger.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -258,8 +258,8 @@
 									<integer>3</integer>
 									<key>value</key>
 									<array>
-										<real>0.0</real>
-										<real>2</real>
+										<real>53</real>
+										<real>-54</real>
 									</array>
 								</dict>
 								<dict>
@@ -276,8 +276,8 @@
 									<integer>3</integer>
 									<key>value</key>
 									<array>
-										<real>0.0</real>
-										<real>-16</real>
+										<real>53</real>
+										<real>-56</real>
 									</array>
 								</dict>
 							</array>
@@ -322,8 +322,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>0.0</real>
-							<real>-16</real>
+							<real>53</real>
+							<real>-56</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -369,7 +369,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>Fly-Swatter.png</string>
+							<string>Fly-Swatter-Bigger.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -405,8 +405,6 @@
 						<array/>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 				<key>seqExpanded</key>
 				<true/>
 			</dict>

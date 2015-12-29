@@ -109,7 +109,7 @@
 						<string>Block</string>
 						<key>value</key>
 						<array>
-							<string></string>
+							<string>mute</string>
 							<integer>1</integer>
 						</array>
 					</dict>
@@ -364,6 +364,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -435,7 +437,7 @@
 						<string>Block</string>
 						<key>value</key>
 						<array>
-							<string></string>
+							<string>pause</string>
 							<integer>1</integer>
 						</array>
 					</dict>
@@ -761,7 +763,7 @@
 						<string>Block</string>
 						<key>value</key>
 						<array>
-							<string></string>
+							<string>reset</string>
 							<integer>1</integer>
 						</array>
 					</dict>
@@ -1016,8 +1018,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
