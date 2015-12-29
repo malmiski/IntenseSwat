@@ -7,9 +7,11 @@
 //
 
 import Foundation
-class GameMenu: CCNode{
+class GameMenu: CCNode
+{
     
-    func didLoadFromCCB(){
+    func didLoadFromCCB()
+    {
         // Just scale it to account for the difference between points
         // and pixels
         self.scale = Float(CCDirector.sharedDirector().viewSize().width/CCDirector.sharedDirector().viewSizeInPixels().width)
@@ -26,12 +28,28 @@ class GameMenu: CCNode{
     }
     */
     
-    func hideMenu(){
+    func hideMenu()
+    {
         SceneManager.instance.hideLayer()
     }
-    func quitGame(){
+    func quitGame()
+    {
         hideMenu()
 // TODO: Implement this method
 //        SceneManager.instance.endGame()
     }
+    
+    func showMenu()
+    {
+        let scrollNode:CCScrollView = self.parent! as! CCScrollView
+        scrollNode.contentNode = self
+        scrollNode.contentSizeType = CCSizeType(widthUnit: .Points, heightUnit: .Points)
+        self.contentSize = CGSize(width: CCDirector.sharedDirector().viewSize().width, height: 1440)//CGFloat(16*highscores.count*30))
+        self.position = CGPoint(x:0,y:0)
+        
+        
+        print(self.contentSize)
+    }
+    
+    
 }

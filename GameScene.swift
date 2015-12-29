@@ -40,6 +40,7 @@ class GameScene: CCNode{
     var swatter:CCNode?=nil
     
     override func touchBegan(touch: CCTouch!, withEvent event: CCTouchEvent!) {
+        
         let point = touch.locationInNode(self)
         swatter = CCBReader.load("Swatter", owner: self)
         swatter!.position = point
@@ -55,7 +56,7 @@ class GameScene: CCNode{
     var startTimer:CCNode?=nil
     // This is called when the continuous option is selected
     func startContinuous(){
-// Until the start timer finishes, then we won't allow touches to be registered on the main node
+        // Until the start timer finishes, then we won't allow touches to be registered on the main node
         SceneManager.instance.disableTouchForNode(self)
         let label = CCLabelTTF(string: "Continuous Mode", fontName:  "AmericanTypewriter", fontSize: 26);
         label.anchorPoint = CGPoint(x:0,y:1)
@@ -64,6 +65,7 @@ class GameScene: CCNode{
         
         startTimer = CCBReader.load("CountDown", owner: self)
         startTimer!.position = CGPoint(x: 0.5 * sizeInPoints.width,y: 0.5 * sizeInPoints.height)
+        
         // This starts the sequence of events that leads to the game beginning
         SceneManager.instance.hud.addChild(startTimer)
         hudStatusBar.position = CGPoint(x:0, y:0)
