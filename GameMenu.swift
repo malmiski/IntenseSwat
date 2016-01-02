@@ -28,13 +28,13 @@ class GameMenu: CCNode
     }
     */
     
-    func hideMenu()
+    func back()
     {
         SceneManager.instance.hideLayer()
     }
-    func quitGame()
+    func quit()
     {
-        hideMenu()
+        back()
 // TODO: Implement this method
 //        SceneManager.instance.endGame()
     }

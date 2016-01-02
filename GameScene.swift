@@ -11,7 +11,11 @@ class GameScene: CCNode{
     let size = CCDirector.sharedDirector().viewSizeInPixels()
     let sizeInPoints = CCDirector.sharedDirector().viewSize()
     let hudStatusBar = CCBReader.load("HUDStatusBar") as! HUDStatusBar
-
+    var flies:[FlyingFly] = []
+    
+    // Four Corners of the Swatter head
+    weak var node_1, node_2, node_3, node_4 : CCNode?
+    
     func didLoadFromCCB(){
         /*
         Code to create repeatable background
@@ -26,39 +30,87 @@ class GameScene: CCNode{
     }
     
     func back(){
+//      Code to return to the main menu
         endGame();
         SceneManager.instance.showMainScene()
     }
     
     func cleanup(){
+    
     }
+    
     func endGame(){
-//        GameManager.instance.cleanup()
+//      This will set off a series of events that will lead to the end of the game, and the saving of scores
         SceneManager.instance.showMainScene()
     }
-    // This code deals with the swatter and its methods, 
-    // might place this in swatters own class perhaps
+    
+//     This code deals with the swatter and its methods, 
+//     might place this in swatters own class perhaps
     var swatter:CCNode?=nil
     
     override func touchBegan(touch: CCTouch!, withEvent event: CCTouchEvent!) {
         
         let point = touch.locationInNode(self)
+//        Safety check to guard against tapping on the screen in the middle of the swatter animation
         if(swatter?.parent != nil){
             swatter!.removeFromParent()
         }
-        swatter = CCBReader.load("Swatter", owner: self)
+//      Don't want to load the swatter more than once
+        if(swatter==nil){
+            swatter = CCBReader.load("Swatter", owner:self)
+        }else{
+//      Reset the animation
+            let manager:CCAnimationManager = swatter!.animationManager!
+            manager.runAnimationsForSequenceNamed(manager.lastCompletedSequenceName)
+        }
+
         swatter!.position = point
         addChild(swatter)
         //addChild(FlyingFly.generateFly(2, bezierPath: nil, origin: point))
     }
     func swatBegins(){
-        //swatEnds()
         //TODO: Implement a method for determining if a fly or if multiple flies are underneath the swatter, thereby eliminating them
+        eliminateFlies()
     }
     func swatEnds(){
         swatter!.removeFromParent()
     }
     
+    func eliminateFlies(){
+        flies = flies.filter({
+            if($0.parent==nil){
+                return false
+            }
+            if(withinSwatter($0.position)){
+                $0.killSelf(self)
+                hudStatusBar.flies++
+                return false
+            }
+            return true
+        })
+    }
+    func withinSwatter(var position:CGPoint)->Bool{
+        position.x = position.x - swatter!.position.x
+        position.y = position.y - swatter!.position.y
+
+        if(position.x <= node_4!.position.x && position.x >= node_1!.position.x){
+            if(position.y<=node_2!.position.y && position.y>=node_3!.position.y){
+            return true
+            }
+        }
+        
+        return false
+    }
+    /*
+    func pointInQuad(point:CGPoint, v1:CGPoint,v2:CGPoint,v3:CGPoint,v4:CGPoint)->Bool{
+        let line1 = line(v1, v2)
+        return true
+        return false
+    }
+    func line(v1:CGPoint, v2:CGPoint)->[CGFloat]{
+        let slope = (v1.y - v2.y)/(v1.x-v2.x)
+        let yInt =
+    }*/
     
     var startTimer:CCNode?=nil
     // This is called when the continuous option is selected
@@ -101,7 +153,9 @@ class GameScene: CCNode{
         addChild(label)
     }
     func genFly(){
-        print("hello")
-        addChild(FlyingFly.generateFly())
+        print("creating fly")
+        let fly = FlyingFly.generateFly(2)
+        flies.append(fly)
+        addChild(fly)
     }
 }

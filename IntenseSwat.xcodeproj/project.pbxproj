@@ -466,6 +466,10 @@
 		8162CC801C0A97A3004E80CE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				58F07A931C13DF3000DFFAF4 /* Highscores+CoreDataProperties.swift */,
+				58F07A941C13DF3000DFFAF4 /* Highscores.swift */,
+				58F598731C25D4370099674F /* UserImage+CoreDataProperties.swift */,
+				58F5986A1C24EB9C0099674F /* UserImage.swift */,
 				8162CC831C0A97E3004E80CE /* GameObject.swift */,
 				8162CC851C0A99EF004E80CE /* GameCharacter.swift */,
 				8162CC871C0A9B5F004E80CE /* EnemyCharacter.swift */,
@@ -493,18 +497,14 @@
 				58DCD6451C08BC8100A8E537 /* HighscoreScene.swift */,
 				58DCD64D1C08BE7100A8E537 /* SceneManager.swift */,
 				58F85B311C08F39A002773A7 /* HighscoreTemplate.swift */,
-				58F07A931C13DF3000DFFAF4 /* Highscores+CoreDataProperties.swift */,
-				58F07A941C13DF3000DFFAF4 /* Highscores.swift */,
-				58F598731C25D4370099674F /* UserImage+CoreDataProperties.swift */,
-				58F5986A1C24EB9C0099674F /* UserImage.swift */,
-				D352B48019EC608A00829775 /* MetalShaders */,
-				58F07A8E1C13DC4200DFFAF4 /* Scores.xcdatamodeld */,
 				58F07A971C13F58000DFFAF4 /* FlyingFly.swift */,
 				58F5986F1C24FE200099674F /* CoreDataController.swift */,
 				58F598791C27A3120099674F /* GameMenu.swift */,
 				587CDCA01C2B6417009F3D2F /* HUDStatusBar.swift */,
 				587CDCA41C2B7B60009F3D2F /* HUDBottomBar.swift */,
 				586235911C30EB5F006ED85C /* GameManager.swift */,
+				58F07A8E1C13DC4200DFFAF4 /* Scores.xcdatamodeld */,
+				D352B48019EC608A00829775 /* MetalShaders */,
 			);
 			name = Source;
 			sourceTree = "<group>";

@@ -445,7 +445,7 @@
 						<string>Block</string>
 						<key>value</key>
 						<array>
-							<string>hideMenu</string>
+							<string>back</string>
 							<integer>1</integer>
 						</array>
 					</dict>
@@ -700,6 +700,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>

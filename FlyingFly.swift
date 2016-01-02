@@ -7,6 +7,8 @@
 //
 
 class FlyingFly: CCNode{
+    var alive = true
+    
     static let sizeInPoints = CCDirector.sharedDirector().viewSize()
     func didLoadFromCCB(){
     }
@@ -44,6 +46,16 @@ class FlyingFly: CCNode{
         }
         let chainedAction = CCActionSequence(one:pathAction, two:removeAction)
         return chainedAction
+    }
+    
+//  Here we stop any actions on the fly, replace it with a the
+    func killSelf(caller:GameScene){
+        alive = false
+        stopAllActions()
+        removeFromParent()
+//      TODO: Add sprite for dead fly here:
+//
+        //caller.removeFly(self)
     }
 
 }
