@@ -12,6 +12,7 @@ class GameScene: CCNode{
     let sizeInPoints = CCDirector.sharedDirector().viewSize()
     let hudStatusBar = CCBReader.load("HUDStatusBar") as! HUDStatusBar
     var flies:[FlyingFly] = []
+    var countTime = false
     
     // Four Corners of the Swatter head
     weak var node_1, node_2, node_3, node_4 : CCNode?
@@ -61,7 +62,7 @@ class GameScene: CCNode{
         }else{
 //      Reset the animation
             let manager:CCAnimationManager = swatter!.animationManager!
-            manager.runAnimationsForSequenceNamed(manager.lastCompletedSequenceName)
+            manager.runAnimationsForSequenceNamed("SwatterTimeline")
         }
 
         swatter!.position = point
@@ -142,7 +143,22 @@ class GameScene: CCNode{
         startTimer!.removeFromParent()
         SceneManager.instance.enableTouchForNode(self)
         //TODO: Begin to populate the screen with flies, increment the time every second, and calculate the score
-        
+        countTime = true
+        performSelector("incrementTime",withObject: self,afterDelay: 0.1)
+        continuousFlyGeneration()
+    }
+    func continuousFlyGeneration(){
+        if(countTime){
+            genFly()
+            performSelector("continuousFlyGeneration", withObject:self, afterDelay:CCTime(FlyingFly.randomFloat()*2))
+        }
+    }
+    
+    func incrementTime(){
+        if(countTime){
+            self.hudStatusBar.time += 0.1
+            performSelector("incrementTime",withObject: self,afterDelay: 0.1)
+        }
     }
     
     // This is called when levels are requested

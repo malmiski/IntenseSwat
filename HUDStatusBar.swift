@@ -15,7 +15,7 @@ class HUDStatusBar:CCNode{
     // Whenever we set these variables, we update the label that is associated with it
     var time:CCTime = 0{
         didSet{
-            timeLabel!.string = "Time: \(time)s"
+            timeLabel!.string = "Time: \(String(format:"%.1f",time))s"
         }
     }
     var flies:Int = 0{
