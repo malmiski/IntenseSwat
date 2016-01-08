@@ -63,6 +63,7 @@
 		8162CC841C0A97E3004E80CE /* GameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8162CC831C0A97E3004E80CE /* GameObject.swift */; };
 		8162CC861C0A99EF004E80CE /* GameCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8162CC851C0A99EF004E80CE /* GameCharacter.swift */; };
 		8162CC881C0A9B5F004E80CE /* EnemyCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8162CC871C0A9B5F004E80CE /* EnemyCharacter.swift */; };
+		819B68091C3F3F1300A2F075 /* Swatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B68081C3F3F1300A2F075 /* Swatter.swift */; };
 		8392007A18EE8E3300B6C429 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8392007918EE8E3300B6C429 /* GLKit.framework */; };
 		927F61A5196C771E000F43EF /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3517B978D7009739AE /* OpenAL.framework */; };
 		927F61A9196C771E000F43EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3D17B978D7009739AE /* Foundation.framework */; };
@@ -211,6 +212,7 @@
 		8162CC831C0A97E3004E80CE /* GameObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameObject.swift; sourceTree = "<group>"; };
 		8162CC851C0A99EF004E80CE /* GameCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCharacter.swift; sourceTree = "<group>"; };
 		8162CC871C0A9B5F004E80CE /* EnemyCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnemyCharacter.swift; sourceTree = "<group>"; };
+		819B68081C3F3F1300A2F075 /* Swatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swatter.swift; sourceTree = "<group>"; };
 		8392007918EE8E3300B6C429 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		927F61BF196C771E000F43EF /* IntenseSwat Android.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IntenseSwat Android.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B71F5907188484E7003F4D28 /* iPad-old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old.png"; path = "Icons/iPad-old.png"; sourceTree = "<group>"; };
@@ -505,6 +507,7 @@
 				586235911C30EB5F006ED85C /* GameManager.swift */,
 				58F07A8E1C13DC4200DFFAF4 /* Scores.xcdatamodeld */,
 				D352B48019EC608A00829775 /* MetalShaders */,
+				819B68081C3F3F1300A2F075 /* Swatter.swift */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -884,6 +887,7 @@
 			files = (
 				58F07A981C13F58000DFFAF4 /* FlyingFly.swift in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
+				819B68091C3F3F1300A2F075 /* Swatter.swift in Sources */,
 				587CDCA51C2B7B60009F3D2F /* HUDBottomBar.swift in Sources */,
 				7A046D7919E84ED5004C4763 /* MainScene.swift in Sources */,
 				8162CC841C0A97E3004E80CE /* GameObject.swift in Sources */,

@@ -13,6 +13,8 @@ class GameManager
     static let sharedInstance = GameManager()
     
 
+    
+
     // Optional variable to point to the current scene being shown
     var currentScene:GameScene? = nil
     
@@ -20,6 +22,8 @@ class GameManager
     {
         
     }
+    
+
     
     // returns current scene which can be cast
     func getCurrentScene() -> GameScene?

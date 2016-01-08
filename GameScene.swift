@@ -14,6 +14,9 @@ class GameScene: CCNode{
     var flies:[FlyingFly] = []
     var countTime = false
     
+    // how many lives the player has
+    var currentLives = 5;
+    
     // Four Corners of the Swatter head
     weak var node_1, node_2, node_3, node_4 : CCNode?
     
@@ -85,6 +88,9 @@ class GameScene: CCNode{
             if(withinSwatter($0.position)){
                 $0.killSelf(self)
                 hudStatusBar.flies++
+                
+                // BOSS: right here is where the fly is killed without the Swatter?
+                decreaseLife();
                 return false
             }
             return true
@@ -173,5 +179,14 @@ class GameScene: CCNode{
         let fly = FlyingFly.generateFly(2)
         flies.append(fly)
         addChild(fly)
+    }
+    
+    func decreaseLife(){
+        print("creating fly")
+        if(currentLives > 0){
+            currentLives = currentLives - 1;
+        }else{
+            endGame();
+        }
     }
 }
