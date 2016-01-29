@@ -42,6 +42,8 @@ class FlyingFly: CCNode{
         }
         let pathAction = CCActionBezierTo(duration: time!, bezier: bezierPath!);
         let removeAction = CCActionCallBlock { () -> Void in
+            // Since this fly got away decrease the players life
+            GameManager.sharedInstance.currentScene!.decreaseLife()
             fly.removeFromParent()
         }
         let chainedAction = CCActionSequence(one:pathAction, two:removeAction)

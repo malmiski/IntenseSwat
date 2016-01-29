@@ -20,8 +20,9 @@ class HUDBottomBar:CCNode{
     }
     
     func pause(){
-        let gameMenu = CCBReader.load("GameMenu") as! GameMenu
-        SceneManager.instance.showLayer(gameMenu)
+        //let gameMenu = CCBReader.load("GameMenu") as! GameMenu
+        //SceneManager.instance.showLayer(gameMenu)
+        SceneManager.instance.showLayer(PauseLayer())
     }
     
     func reset(){

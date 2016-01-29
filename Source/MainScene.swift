@@ -4,16 +4,15 @@ class MainScene: CCNode {
 
     
     func continuous(){
-        //SceneManager.instance.showScene("GameScene")
         SceneManager.instance.showGameSceneContinuous();
     }
-    
-    func win(){
-        SceneManager.instance.showGameSceneWin()
-    }
-    
+
     func highscores(){
-        SceneManager.instance.showScene("ScrollScene")
+        SceneManager.instance.currentScene = CCDirector.sharedDirector().runningScene
+        SceneManager.instance.currentMainNode = self
+        SceneManager.instance.showLayer(HighscoreLayer(), allowBackgroundTouches: false)
+        
+        //SceneManager.instance.showScene("ScrollScene")
     }
     
     func play(){

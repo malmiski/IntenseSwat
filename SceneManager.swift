@@ -21,7 +21,7 @@ class SceneManager{
     let shadowBackground = CCNodeColor(color: CCColor(red: 0, green: 0, blue: 0, alpha: 0.6))
     // The heads-up display, for displaying lots of things
     let hud:CCNode
-    
+
     init(){
         hud = CCNode()
         hud.zOrder = 990
@@ -49,6 +49,11 @@ class SceneManager{
         hud.removeFromParent()
         clearHUD()
         showHUD()
+        if(currentLayer != nil){
+            currentLayer!.stopAllActions()
+            currentLayer!.removeFromParent()
+            currentLayer = nil
+        }
         let scene:CCScene = CCBReader.loadAsScene(name)
 //      We locate the top node of the scene, which we created in SpriteBuilder
 //      and then we cast it to the generic type T, which allows us to perform
@@ -72,9 +77,7 @@ class SceneManager{
     func showGameSceneWin() -> GameScene{
         return showScene("GameScene", selectorToPerform: "startWin")
     }
-    func showCameraScene() -> CameraScene{
-        return showScene("CameraScene")
-    }
+
     func showMainScene() -> MainScene{
         return showScene("MainScene")
     }
@@ -91,8 +94,10 @@ class SceneManager{
         }
     }
     
-    func showLayer(layer:CCNode, allowBackgroundTouches:Bool=false) -> CCNode{
-        showShadedBackground()
+    func showLayer(layer:CCNode, allowBackgroundTouches:Bool=false, darkenBackground:Bool=true) -> CCNode{
+        if(darkenBackground){
+            showShadedBackground()
+        }
         layer.anchorPoint = CGPoint(x: 0.5, y: 0)
         layer.position = CGPoint(x:CCDirector.sharedDirector().viewSize().width/2,y:CCDirector.sharedDirector().viewSize().height)
         if(currentLayer != nil){
@@ -123,7 +128,9 @@ class SceneManager{
                     self.currentLayer?.removeFromParent()
                 }
                 self.currentLayer = nil
-                self.hideShadedBackground()
+                if(self.shadowBackground.parent != nil){
+                    self.hideShadedBackground()
+                }
                 self.enableTouchForNode(self.currentMainNode!)
             })))
         }

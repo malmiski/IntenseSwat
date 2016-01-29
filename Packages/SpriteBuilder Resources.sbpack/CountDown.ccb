@@ -1552,8 +1552,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 				<key>seqExpanded</key>
 				<true/>
 			</dict>
@@ -1696,7 +1694,7 @@
 			<key>length</key>
 			<real>2</real>
 			<key>name</key>
-			<string>Countdown Timeline</string>
+			<string>CountdownTimeline</string>
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>

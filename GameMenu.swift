@@ -15,6 +15,7 @@ class GameMenu: CCNode
         // Just scale it to account for the difference between points
         // and pixels
         self.scale = Float(CCDirector.sharedDirector().viewSize().width/CCDirector.sharedDirector().viewSizeInPixels().width)
+        print(scale)
         
     }
     

@@ -39,24 +39,6 @@ class CoreDataController{
         }
 
     }
-
-    func loadUserImage() -> UserImage{
-        let request = NSFetchRequest(entityName: "UserImage")
-        var results:[UserImage]
-        
-        do{
-            results = try self.managedObjectContext.executeFetchRequest(request) as! [UserImage]
-            if(results.isEmpty){
-                let newUserImage = NSEntityDescription.insertNewObjectForEntityForName("UserImage", inManagedObjectContext: self.managedObjectContext) as! UserImage
-
-                results = try self.managedObjectContext.executeFetchRequest(request) as! [UserImage]
-            }
-            
-        }catch{
-        fatalError("couldn't load the picture data")
-        }
-        return results.first!
-    }
     
     func save(){
         do{

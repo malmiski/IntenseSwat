@@ -13,6 +13,7 @@ class GameScene: CCNode{
     let hudStatusBar = CCBReader.load("HUDStatusBar") as! HUDStatusBar
     var flies:[FlyingFly] = []
     var countTime = false
+    var gameRunning = true
     
     // how many lives the player has
     var currentLives = 5;
@@ -30,22 +31,27 @@ class GameScene: CCNode{
         texture.setTexParameters(&params)
         sprite.setTextureRect(CGRect(origin: CGPoint(x: 0,y: 0), size: size));
         backgroundNode!.addChild(sprite)
-        
+        // Initialize GameManager with this game scene
+        GameManager.sharedInstance.setCurrentScene(self)
     }
-    
+/*
     func back(){
 //      Code to return to the main menu
         endGame();
         SceneManager.instance.showMainScene()
     }
-    
+*/
     func cleanup(){
     
     }
     
     func endGame(){
 //      This will set off a series of events that will lead to the end of the game, and the saving of scores
-        SceneManager.instance.showMainScene()
+        //SceneManager.instance.showMainScene()
+        gameRunning = false
+        self.pauseGame()
+        // Show the GameFinishLayer to tell the player they died, and how well they did
+        SceneManager.instance.showLayer(GameFinishLayer())
     }
     
 //     This code deals with the swatter and its methods, 
@@ -88,9 +94,6 @@ class GameScene: CCNode{
             if(withinSwatter($0.position)){
                 $0.killSelf(self)
                 hudStatusBar.flies++
-                
-                // BOSS: right here is where the fly is killed without the Swatter?
-                decreaseLife();
                 return false
             }
             return true
@@ -108,26 +111,13 @@ class GameScene: CCNode{
         
         return false
     }
-    /*
-    func pointInQuad(point:CGPoint, v1:CGPoint,v2:CGPoint,v3:CGPoint,v4:CGPoint)->Bool{
-        let line1 = line(v1, v2)
-        return true
-        return false
-    }
-    func line(v1:CGPoint, v2:CGPoint)->[CGFloat]{
-        let slope = (v1.y - v2.y)/(v1.x-v2.x)
-        let yInt =
-    }*/
-    
+
     var startTimer:CCNode?=nil
     // This is called when the continuous option is selected
     func startContinuous(){
         // Until the start timer finishes, then we won't allow touches to be registered on the main node
         SceneManager.instance.disableTouchForNode(self)
-        let label = CCLabelTTF(string: "Continuous Mode", fontName:  "AmericanTypewriter", fontSize: 26);
-        label.anchorPoint = CGPoint(x:0,y:1)
-        label.positionInPoints = CGPoint(x:0,y:sizeInPoints.height)
-        //SceneManager.instance.hud.addChild(label)
+        SceneManager.instance.disableTouchForNode(SceneManager.instance.hud)
         
         startTimer = CCBReader.load("CountDown", owner: self)
         startTimer!.position = CGPoint(x: 0.5 * sizeInPoints.width,y: 0.5 * sizeInPoints.height)
@@ -147,33 +137,29 @@ class GameScene: CCNode{
     // As set up in SpriteBuilder, this callback will be called when the count down text dissapears
     func countDownFinished(){
         startTimer!.removeFromParent()
+        gameRunning = true
         SceneManager.instance.enableTouchForNode(self)
+        SceneManager.instance.enableTouchForNode(SceneManager.instance.hud)
         //TODO: Begin to populate the screen with flies, increment the time every second, and calculate the score
         countTime = true
         performSelector("incrementTime",withObject: self,afterDelay: 0.1)
+        unpauseAllFlies()
         continuousFlyGeneration()
     }
     func continuousFlyGeneration(){
-        if(countTime){
+        if(countTime && gameRunning){
             genFly()
             performSelector("continuousFlyGeneration", withObject:self, afterDelay:CCTime(FlyingFly.randomFloat()*2))
         }
     }
     
     func incrementTime(){
-        if(countTime){
+        if(countTime && gameRunning){
             self.hudStatusBar.time += 0.1
             performSelector("incrementTime",withObject: self,afterDelay: 0.1)
         }
     }
     
-    // This is called when levels are requested
-    func startWin(){
-        let label = CCLabelTTF(string: "Win Mode", fontName:  "AmericanTypewriter", fontSize: 26);
-        label.anchorPoint = CGPoint(x:0,y:1)
-        label.positionInPoints = CGPoint(x:0,y:sizeInPoints.height)
-        addChild(label)
-    }
     func genFly(){
         print("creating fly")
         let fly = FlyingFly.generateFly(2)
@@ -185,8 +171,34 @@ class GameScene: CCNode{
         print("creating fly")
         if(currentLives > 0){
             currentLives = currentLives - 1;
-        }else{
+        }else if(gameRunning){
             endGame();
+        }
+    }
+    
+    func pauseGame(){
+        pauseAllFlies()
+        gameRunning = false
+        
+    }
+    
+    func unpauseGame(){
+        SceneManager.instance.hud.addChild(startTimer!)
+        SceneManager.instance.disableTouchForNode(self)
+        SceneManager.instance.disableTouchForNode(SceneManager.instance.hud)
+        startTimer!.animationManager!.runAnimationsForSequenceNamed("CountdownTimeline")
+    }
+    
+    // Pause all flies actions currently on them
+    func pauseAllFlies(){
+        for(var i = 0; i<flies.count; i++){
+            flies[i].paused = true
+            //flies[i].stopAllActions()
+        }
+    }
+    func unpauseAllFlies(){
+        for(var i = 0; i<flies.count; i++){
+            flies[i].paused = false
         }
     }
 }

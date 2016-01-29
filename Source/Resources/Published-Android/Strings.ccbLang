@@ -24,6 +24,12 @@
 			<key>translations</key>
 			<dict/>
 		</dict>
+		<dict>
+			<key>key</key>
+			<string>Exit</string>
+			<key>translations</key>
+			<dict/>
+		</dict>
 	</array>
 </dict>
 </plist>
