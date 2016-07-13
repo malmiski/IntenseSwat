@@ -51,7 +51,9 @@ class GameScene: CCNode{
         gameRunning = false
         self.pauseGame()
         // Show the GameFinishLayer to tell the player they died, and how well they did
-        SceneManager.instance.showLayer(GameFinishLayer())
+        let finishLayer = GameFinishLayer()
+        finishLayer.updateScores(hudStatusBar.flies, timeValue: hudStatusBar.time, scoreValue: hudStatusBar.score);
+        SceneManager.instance.showLayer(finishLayer)
     }
     
 //     This code deals with the swatter and its methods, 
@@ -93,13 +95,15 @@ class GameScene: CCNode{
             }
             if(withinSwatter($0.position)){
                 $0.killSelf(self)
-                hudStatusBar.flies++
+                hudStatusBar.flies += 1
+                hudStatusBar.score += 15
                 return false
             }
             return true
         })
     }
-    func withinSwatter(var position:CGPoint)->Bool{
+    func withinSwatter(position:CGPoint)->Bool{
+        var position = position;
         position.x = position.x - swatter!.position.x
         position.y = position.y - swatter!.position.y
 
@@ -142,21 +146,21 @@ class GameScene: CCNode{
         SceneManager.instance.enableTouchForNode(SceneManager.instance.hud)
         //TODO: Begin to populate the screen with flies, increment the time every second, and calculate the score
         countTime = true
-        performSelector("incrementTime",withObject: self,afterDelay: 0.1)
+        performSelector(#selector(GameScene.incrementTime),withObject: self,afterDelay: 0.1)
         unpauseAllFlies()
         continuousFlyGeneration()
     }
     func continuousFlyGeneration(){
         if(countTime && gameRunning){
             genFly()
-            performSelector("continuousFlyGeneration", withObject:self, afterDelay:CCTime(FlyingFly.randomFloat()*2))
+            performSelector(#selector(GameScene.continuousFlyGeneration), withObject:self, afterDelay:CCTime(FlyingFly.randomFloat()*2))
         }
     }
     
     func incrementTime(){
         if(countTime && gameRunning){
             self.hudStatusBar.time += 0.1
-            performSelector("incrementTime",withObject: self,afterDelay: 0.1)
+            performSelector(#selector(GameScene.incrementTime),withObject: self,afterDelay: 0.1)
         }
     }
     
@@ -191,13 +195,13 @@ class GameScene: CCNode{
     
     // Pause all flies actions currently on them
     func pauseAllFlies(){
-        for(var i = 0; i<flies.count; i++){
+        for i in (0 ..< flies.count) {
             flies[i].paused = true
             //flies[i].stopAllActions()
         }
     }
     func unpauseAllFlies(){
-        for(var i = 0; i<flies.count; i++){
+        for i in (0 ..< flies.count) {
             flies[i].paused = false
         }
     }

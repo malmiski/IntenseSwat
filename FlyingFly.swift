@@ -18,12 +18,15 @@ class FlyingFly: CCNode{
         fly.runAction(randomPath)
         return fly
     }
+    //
     static func randomFloat()->CGFloat{
         arc4random_stir()
         return CGFloat(Float(arc4random())/Float(UINT32_MAX))
     }
     // Here is the meat of the generation of the random fly
-    static func generateRandomPath(fly:FlyingFly, var time:CCTime?=nil,var bezierPath:ccBezierConfig?=nil, origin:CGPoint?=nil)->CCAction{
+    static func generateRandomPath(fly:FlyingFly, time:CCTime?=nil, bezierPath:ccBezierConfig?=nil, origin:CGPoint?=nil)->CCAction{
+        var time = time
+        var bezierPath = bezierPath;
         arc4random_stir()
         if(origin==nil){
             fly.position = CGPoint(x:randomFloat() * sizeInPoints.width, y:randomFloat() * sizeInPoints.height)

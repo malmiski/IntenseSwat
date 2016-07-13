@@ -16,7 +16,7 @@ class GameFinishLayer:CCNodeColor{
         super.init(color:color, width:0, height:0)
         let layer = CCBReader.load("GameFinishLayer", owner:self)
         let colorNode = layer.children.first! as! CCNodeColor
-        updateScores()
+        updateScores(1,timeValue:1, scoreValue:1)
         layer.removeAllChildren()
         self.addChild(colorNode)
     }
@@ -29,13 +29,16 @@ class GameFinishLayer:CCNodeColor{
         SceneManager.instance.showMainScene()
     }
     
-    // Updates the
-    func updateScores(){
+    // Updates the scores for the current game played
+    func updateScores(fliesValue:Int, timeValue:CCTime, scoreValue:Int){
         /*
         flies_value!.string = ""
         time_value!.string = ""
         score_value!.string = ""
         */
+        flies_value!.string = "\(fliesValue)";
+        time_value!.string = "\(timeValue)";
+        score_value!.string = "\(scoreValue)";
     }
     
 }
