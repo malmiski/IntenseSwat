@@ -44,8 +44,30 @@ class CoreDataController{
         do{
             try self.managedObjectContext.save()
         }catch{
-        fatalError("couldn't save")
+        fatalError("Couldn't save")
         }
+    }
+    
+    func getHighscores() -> [Highscores]{
+        let query:NSFetchRequest = NSFetchRequest()
+        query.entity = NSEntityDescription.entityForName("Highscores", inManagedObjectContext: managedObjectContext)
+        query.sortDescriptors = [NSSortDescriptor(key: "score", ascending: false)]
+        query.fetchLimit = 3
+        let fetchedObjects:[Highscores]
+        do{
+            fetchedObjects = try CoreDataController.instance.managedObjectContext.executeFetchRequest(query) as! [Highscores]
+        }catch _{
+            fatalError("Something happened")
+        }
+        return fetchedObjects
+    }
+    
+    func saveHighscore(score:Int, time:Double, flies:Int){
+        let managedHighscore:NSManagedObject = NSEntityDescription.insertNewObjectForEntityForName("Highscores", inManagedObjectContext: managedObjectContext)
+        managedHighscore.setValue(score, forKey: "score")
+        managedHighscore.setValue(time, forKey: "time")
+        managedHighscore.setValue(flies, forKey: "flies")
+        save()
     }
 
 }

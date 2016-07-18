@@ -6,6 +6,7 @@
 //  Copyright © 2016 Apportable. All rights reserved.
 //
 
+@available(iOS 8.0, *)
 class PauseLayer:CCNodeColor{
     override init(color:CCColor!=CCColor.redColor()){
         super.init(color:color, width:0, height:0)
@@ -17,16 +18,10 @@ class PauseLayer:CCNodeColor{
         GameManager.sharedInstance.currentScene!.pauseGame()
     }
     
-    func sfx_selected(){
-        
-    }
-    
-    func bg_selected(){
-    
-    }
     
     func reset_selected(){
-    
+        AudioManager.instance.stopEverything()
+        SceneManager.instance.showGameSceneContinuous()
     }
     func return_selected(){
         SceneManager.instance.hideLayer()
@@ -34,6 +29,7 @@ class PauseLayer:CCNodeColor{
     }
     
     func exit_selected(){
+        AudioManager.instance.stopEverything()
         SceneManager.instance.showMainScene()
     }
 

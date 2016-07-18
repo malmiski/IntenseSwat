@@ -6,6 +6,7 @@
 //  Copyright © 2015 Apportable. All rights reserved.
 //
 
+@available(iOS 8.0, *)
 class GameScene: CCNode{
     weak var backgroundNode:CCNode?
     let size = CCDirector.sharedDirector().viewSizeInPixels()
@@ -54,9 +55,24 @@ class GameScene: CCNode{
         let finishLayer = GameFinishLayer()
         finishLayer.updateScores(hudStatusBar.flies, timeValue: hudStatusBar.time, scoreValue: hudStatusBar.score);
         SceneManager.instance.showLayer(finishLayer)
+        
+        updateHighscores(hudStatusBar.score, timeVal: hudStatusBar.time, fliesVal: hudStatusBar.flies)
+        
     }
-    
-//     This code deals with the swatter and its methods, 
+    func updateHighscores(scoreVal:Int, timeVal:Double, fliesVal:Int){
+        let highscores:[Highscores] = CoreDataController.instance.getHighscores()
+        var shouldInsert:Bool = true
+        if let last = highscores.last {
+            if last.score!.integerValue > scoreVal || highscores.count < 3{
+             shouldInsert = false
+            }
+        }
+        if(shouldInsert){
+            CoreDataController.instance.saveHighscore(scoreVal, time:timeVal, flies:fliesVal)
+        }
+    }
+
+//     This code deals with the swatter and its methods,
 //     might place this in swatters own class perhaps
     var swatter:CCNode?=nil
     
@@ -83,6 +99,7 @@ class GameScene: CCNode{
     func swatBegins(){
         //TODO: Implement a method for determining if a fly or if multiple flies are underneath the swatter, thereby eliminating them
         eliminateFlies()
+        AudioManager.instance.playSwatterSwatting()
     }
     func swatEnds(){
         swatter!.removeFromParent()
@@ -197,12 +214,14 @@ class GameScene: CCNode{
     func pauseAllFlies(){
         for i in (0 ..< flies.count) {
             flies[i].paused = true
+            flies[i].pauseBuzzing()
             //flies[i].stopAllActions()
         }
     }
     func unpauseAllFlies(){
         for i in (0 ..< flies.count) {
             flies[i].paused = false
+            flies[i].continueBuzzing()
         }
     }
 }

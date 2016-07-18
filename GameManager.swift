@@ -8,6 +8,7 @@
 
 import Foundation
 
+@available(iOS 8.0, *)
 class GameManager
 {
     static let sharedInstance = GameManager()

@@ -6,6 +6,7 @@
 //  Copyright © 2015 Apportable. All rights reserved.
 //
 
+@available(iOS 8.0, *)
 class SceneManager{
     static var instance = SceneManager()
     // Optional variable to point to the current scene being shown
@@ -79,6 +80,7 @@ class SceneManager{
     }
 
     func showMainScene() -> MainScene{
+        AudioManager.instance.stopBackgroundMusic()
         return showScene("MainScene")
     }
     

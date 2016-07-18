@@ -1,10 +1,12 @@
 import Foundation
 
+@available(iOS 8.0, *)
 class MainScene: CCNode {
 
     
     func continuous(){
         SceneManager.instance.showGameSceneContinuous();
+        AudioManager.instance.stopBackgroundMusic()
     }
 
     func highscores(){
@@ -17,6 +19,7 @@ class MainScene: CCNode {
     
     func play(){
         SceneManager.instance.showScene("GameScene")
+        AudioManager.instance.stopBackgroundMusic()
     }
     
     func camera(){
@@ -25,6 +28,7 @@ class MainScene: CCNode {
    
     func didLoadFromCCB(){
         CoreDataController.instance;
+        AudioManager.instance.startBackgroundMusic()
     }
     
 }

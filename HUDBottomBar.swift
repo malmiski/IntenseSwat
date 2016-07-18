@@ -7,6 +7,7 @@
 //
 
 import Foundation
+@available(iOS 8.0, *)
 class HUDBottomBar:CCNode{
     weak var pauseButton:CCButton?
     weak var resetButton:CCButton?

@@ -6,12 +6,17 @@
 //  Copyright © 2015 Apportable. All rights reserved.
 //
 
+@available(iOS 8.0, *)
 class FlyingFly: CCNode{
     var alive = true
+    var buzz:ALSoundSource! = nil
     
     static let sizeInPoints = CCDirector.sharedDirector().viewSize()
+    
     func didLoadFromCCB(){
+        buzz = AudioManager.instance.playFlyBuzz();
     }
+    
     static func generateFly(time:CCTime?=nil,bezierPath:ccBezierConfig?=nil, origin:CGPoint?=nil) -> FlyingFly{
         let fly = CCBReader.load("FlyingFly") as! FlyingFly
         let randomPath:CCAction = generateRandomPath(fly, time: time, bezierPath: bezierPath, origin: origin)
@@ -53,11 +58,20 @@ class FlyingFly: CCNode{
         return chainedAction
     }
     
+    func pauseBuzzing(){
+        buzz.paused = true
+    }
+    
+    func continueBuzzing(){
+        buzz.paused = false
+    }
 //  Here we stop any actions on the fly, replace it with a the
     func killSelf(caller:GameScene){
         alive = false
         stopAllActions()
         removeFromParent()
+        buzz.stop()
+        AudioManager.instance.playFlySquishing()
 //      TODO: Add sprite for dead fly here:
 //
         //caller.removeFly(self)

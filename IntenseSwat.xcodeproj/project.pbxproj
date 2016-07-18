@@ -11,6 +11,11 @@
 		586235921C30EB5F006ED85C /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586235911C30EB5F006ED85C /* GameManager.swift */; };
 		587CDCA11C2B6417009F3D2F /* HUDStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587CDCA01C2B6417009F3D2F /* HUDStatusBar.swift */; };
 		587CDCA51C2B7B60009F3D2F /* HUDBottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587CDCA41C2B7B60009F3D2F /* HUDBottomBar.swift */; };
+		58C970691D3B3CD900DE375A /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C970681D3B3CD900DE375A /* AudioManager.swift */; };
+		58C9706D1D3B4C7100DE375A /* flyBuzz.wav in Resources */ = {isa = PBXBuildFile; fileRef = 58C9706C1D3B4C7100DE375A /* flyBuzz.wav */; };
+		58C9706F1D3B4CD000DE375A /* flySquish.wav in Resources */ = {isa = PBXBuildFile; fileRef = 58C9706E1D3B4CD000DE375A /* flySquish.wav */; };
+		58C970711D3B50C900DE375A /* swatterSwatting.wav in Resources */ = {isa = PBXBuildFile; fileRef = 58C970701D3B50C900DE375A /* swatterSwatting.wav */; };
+		58C970731D3C087C00DE375A /* onett.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 58C970721D3C087C00DE375A /* onett.mp3 */; };
 		58D6D4921C59753600D860CC /* HighscoreLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D6D4911C59753600D860CC /* HighscoreLayer.swift */; };
 		58D6D4971C59EE6200D860CC /* Scores.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 58D6D4951C59EE6200D860CC /* Scores.xcdatamodeld */; };
 		58D6D4991C59EEA000D860CC /* PauseLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D6D4981C59EEA000D860CC /* PauseLayer.swift */; };
@@ -166,6 +171,11 @@
 		586235911C30EB5F006ED85C /* GameManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		587CDCA01C2B6417009F3D2F /* HUDStatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDStatusBar.swift; sourceTree = "<group>"; };
 		587CDCA41C2B7B60009F3D2F /* HUDBottomBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDBottomBar.swift; sourceTree = "<group>"; };
+		58C970681D3B3CD900DE375A /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		58C9706C1D3B4C7100DE375A /* flyBuzz.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = flyBuzz.wav; sourceTree = "<group>"; };
+		58C9706E1D3B4CD000DE375A /* flySquish.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = flySquish.wav; sourceTree = "<group>"; };
+		58C970701D3B50C900DE375A /* swatterSwatting.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = swatterSwatting.wav; sourceTree = "<group>"; };
+		58C970721D3C087C00DE375A /* onett.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = onett.mp3; sourceTree = "<group>"; };
 		58D6D4911C59753600D860CC /* HighscoreLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighscoreLayer.swift; sourceTree = "<group>"; };
 		58D6D4961C59EE6200D860CC /* Scores.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Scores.xcdatamodel; sourceTree = "<group>"; };
 		58D6D4981C59EEA000D860CC /* PauseLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PauseLayer.swift; sourceTree = "<group>"; };
@@ -487,6 +497,7 @@
 				58D6D4951C59EE6200D860CC /* Scores.xcdatamodeld */,
 				58D6D4981C59EEA000D860CC /* PauseLayer.swift */,
 				582E5AA71C5AB3810084CC40 /* GameFinishLayer.swift */,
+				58C970681D3B3CD900DE375A /* AudioManager.swift */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -580,7 +591,11 @@
 			children = (
 				7A40365D19DDF896007B6E8F /* Platforms */,
 				7AFCD5DD19E9BDC200BCCCDA /* Bridging-Header.h */,
+				58C9706C1D3B4C7100DE375A /* flyBuzz.wav */,
+				58C9706E1D3B4CD000DE375A /* flySquish.wav */,
+				58C970701D3B50C900DE375A /* swatterSwatting.wav */,
 				7AFCD5DB19E9BD9F00BCCCDA /* cocos2d.h */,
+				58C970721D3C087C00DE375A /* onett.mp3 */,
 				B73789861807631A0076A88C /* Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -776,7 +791,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58C9706F1D3B4CD000DE375A /* flySquish.wav in Resources */,
 				B71F5919188484E7003F4D28 /* Settings.png in Resources */,
+				58C970711D3B50C900DE375A /* swatterSwatting.wav in Resources */,
 				B7378978180762440076A88C /* Default@2x.png in Resources */,
 				B71F5914188484E7003F4D28 /* iPad@2x.png in Resources */,
 				B71F5913188484E7003F4D28 /* iPad.png in Resources */,
@@ -789,6 +806,8 @@
 				B71F5917188484E7003F4D28 /* iPhone.png in Resources */,
 				B7378975180762440076A88C /* Default-568h@2x.png in Resources */,
 				B71F5918188484E7003F4D28 /* iPhone@2x.png in Resources */,
+				58C9706D1D3B4C7100DE375A /* flyBuzz.wav in Resources */,
+				58C970731D3C087C00DE375A /* onett.mp3 in Resources */,
 				B7378977180762440076A88C /* Default.png in Resources */,
 				B71F5911188484E7003F4D28 /* iPad-old.png in Resources */,
 			);
@@ -870,6 +889,7 @@
 				819B68091C3F3F1300A2F075 /* Swatter.swift in Sources */,
 				587CDCA51C2B7B60009F3D2F /* HUDBottomBar.swift in Sources */,
 				7A046D7919E84ED5004C4763 /* MainScene.swift in Sources */,
+				58C970691D3B3CD900DE375A /* AudioManager.swift in Sources */,
 				587CDCA11C2B6417009F3D2F /* HUDStatusBar.swift in Sources */,
 				582E5AA81C5AB3810084CC40 /* GameFinishLayer.swift in Sources */,
 				58F07A961C13DF3000DFFAF4 /* Highscores.swift in Sources */,

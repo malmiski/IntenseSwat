@@ -6,6 +6,7 @@
 //  Copyright © 2016 Apportable. All rights reserved.
 //
 
+@available(iOS 8.0, *)
 class GameFinishLayer:CCNodeColor{
     weak var flies_value:CCLabelTTF?
     weak var time_value:CCLabelTTF?
@@ -19,23 +20,21 @@ class GameFinishLayer:CCNodeColor{
         updateScores(1,timeValue:1, scoreValue:1)
         layer.removeAllChildren()
         self.addChild(colorNode)
+        
     }
     
     func try_again_selected(){
+        AudioManager.instance.stopEverything()
         SceneManager.instance.showGameSceneContinuous()
     }
     
     func quit_selected(){
+        AudioManager.instance.stopEverything()
         SceneManager.instance.showMainScene()
     }
     
     // Updates the scores for the current game played
     func updateScores(fliesValue:Int, timeValue:CCTime, scoreValue:Int){
-        /*
-        flies_value!.string = ""
-        time_value!.string = ""
-        score_value!.string = ""
-        */
         flies_value!.string = "\(fliesValue)";
         time_value!.string = "\(timeValue)";
         score_value!.string = "\(scoreValue)";

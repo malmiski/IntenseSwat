@@ -423,9 +423,9 @@
 						<key>displayName</key>
 						<string>CCLabelTTF</string>
 						<key>memberVarAssignmentName</key>
-						<string></string>
+						<string>score_one</string>
 						<key>memberVarAssignmentType</key>
-						<integer>1</integer>
+						<integer>2</integer>
 						<key>properties</key>
 						<array>
 							<dict>
@@ -1460,9 +1460,9 @@ HIGHSCORES</string>
 						<key>displayName</key>
 						<string>CCLabelTTF</string>
 						<key>memberVarAssignmentName</key>
-						<string></string>
+						<string>score_two</string>
 						<key>memberVarAssignmentType</key>
-						<integer>1</integer>
+						<integer>2</integer>
 						<key>properties</key>
 						<array>
 							<dict>
@@ -1667,9 +1667,9 @@ HIGHSCORES</string>
 						<key>displayName</key>
 						<string>CCLabelTTF</string>
 						<key>memberVarAssignmentName</key>
-						<string></string>
+						<string>score_three</string>
 						<key>memberVarAssignmentType</key>
-						<integer>1</integer>
+						<integer>2</integer>
 						<key>properties</key>
 						<array>
 							<dict>
@@ -1861,6 +1861,8 @@ HIGHSCORES</string>
 								</array>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 				</array>
 				<key>customClass</key>
