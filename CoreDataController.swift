@@ -59,6 +59,7 @@ class CoreDataController{
         }catch _{
             fatalError("Something happened")
         }
+        print("Ello, ello, printing some highscores for ya \(fetchedObjects)")
         return fetchedObjects
     }
     

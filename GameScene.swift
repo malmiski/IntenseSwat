@@ -63,7 +63,7 @@ class GameScene: CCNode{
         let highscores:[Highscores] = CoreDataController.instance.getHighscores()
         var shouldInsert:Bool = true
         if let last = highscores.last {
-            if last.score!.integerValue > scoreVal || highscores.count < 3{
+            if last.score!.integerValue > scoreVal && highscores.count == 3{
              shouldInsert = false
             }
         }
