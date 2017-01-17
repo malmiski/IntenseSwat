@@ -943,6 +943,11 @@
 			attributes = {
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Karl Stenerud";
+				TargetAttributes = {
+					CBBAB311171D0B84009B955F = {
+						LastSwiftMigration = 0800;
+					};
+				};
 			};
 			buildConfigurationList = CBBAA824171D05AA009B955F /* Build configuration list for PBXProject "ObjectAL" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1252,6 +1257,7 @@
 				PRODUCT_NAME = ObjectAL;
 				PUBLIC_HEADERS_FOLDER_PATH = "include/$(PRODUCT_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/ObjectAL/** $(SRCROOT)/../../../cocos2d $(SRCROOT)/../../../cocos2d/Platforms $(SRCROOT)/../../../cocos2d/Support";
 			};
 			name = Debug;
@@ -1269,6 +1275,7 @@
 				PRODUCT_NAME = ObjectAL;
 				PUBLIC_HEADERS_FOLDER_PATH = "include/$(PRODUCT_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/ObjectAL/** $(SRCROOT)/../../../cocos2d $(SRCROOT)/../../../cocos2d/Platforms $(SRCROOT)/../../../cocos2d/Support";
 			};
 			name = Release;

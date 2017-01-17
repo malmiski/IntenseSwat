@@ -20,7 +20,7 @@ class GameScene: CCNode{
     var currentLives = 5;
     
     // Four Corners of the Swatter head
-    weak var node_1, node_2, node_3, node_4 : CCNode?
+    weak var top_left, top_right, bottom_right, bottom_left : CCNode?
     
     func didLoadFromCCB(){
         /*
@@ -35,16 +35,6 @@ class GameScene: CCNode{
         // Initialize GameManager with this game scene
         GameManager.sharedInstance.setCurrentScene(self)
     }
-/*
-    func back(){
-//      Code to return to the main menu
-        endGame();
-        SceneManager.instance.showMainScene()
-    }
-*/
-    func cleanup(){
-    
-    }
     
     func endGame(){
 //      This will set off a series of events that will lead to the end of the game, and the saving of scores
@@ -54,6 +44,9 @@ class GameScene: CCNode{
         // Show the GameFinishLayer to tell the player they died, and how well they did
         let finishLayer = GameFinishLayer()
         finishLayer.updateScores(hudStatusBar.flies, timeValue: hudStatusBar.time, scoreValue: hudStatusBar.score);
+        for fly in flies{
+            fly.killSelf(self)
+        }
         SceneManager.instance.showLayer(finishLayer)
         
         updateHighscores(hudStatusBar.score, timeVal: hudStatusBar.time, fliesVal: hudStatusBar.flies)
@@ -110,7 +103,7 @@ class GameScene: CCNode{
             if($0.parent==nil){
                 return false
             }
-            if(withinSwatter($0.position)){
+            if(flyWithinSwatter($0)){
                 $0.killSelf(self)
                 hudStatusBar.flies += 1
                 hudStatusBar.score += 15
@@ -119,18 +112,39 @@ class GameScene: CCNode{
             return true
         })
     }
+    func flyWithinSwatter(fly:FlyingFly)->Bool{
+        let top_right = withinSwatter(CGPoint(x: fly.position.x + fly.contentSize.width, y: fly.position.y + fly.contentSize.height))
+        let bottom_right = withinSwatter(CGPoint(x: fly.position.x + fly.contentSize.width, y: fly.position.y - fly.contentSize.height))
+        let bottom_left = withinSwatter(CGPoint(x: fly.position.x - fly.contentSize.width, y: fly.position.y - fly.contentSize.height))
+        let top_left = withinSwatter(CGPoint(x: fly.position.x - fly.contentSize.width, y: fly.position.y + fly.contentSize.height))
+        return top_right || bottom_right || bottom_left || top_left
+    }
     func withinSwatter(position:CGPoint)->Bool{
         var position = position;
         position.x = position.x - swatter!.position.x
         position.y = position.y - swatter!.position.y
-
+        /*
         if(position.x <= node_4!.position.x && position.x >= node_1!.position.x){
             if(position.y<=node_2!.position.y && position.y>=node_3!.position.y){
             return true
             }
-        }
+        }*/
+        let topLeft = top_left!.position
+        let topRight = top_right!.position
+        let bottomRight = bottom_right!.position
+        let bottomLeft = bottom_left!.position
+
+        let under_top = lineCheck(topLeft, point_2: topRight, pnt_chk: position, above: false)
+        let under_right = lineCheck(topRight, point_2: bottomRight, pnt_chk: position, above: false)
+        let above_left = lineCheck(topLeft, point_2: bottomLeft, pnt_chk: position, above: true)
+        let above_bottom = lineCheck(bottomLeft, point_2: bottomRight, pnt_chk: position, above: true)
         
-        return false
+        return under_top && under_right && above_left && above_bottom
+    }
+    func lineCheck(point_1:CGPoint, point_2:CGPoint, pnt_chk:CGPoint, above:Bool) -> Bool{
+        let slope = (point_1.y - point_2.y)/(point_1.x-point_2.x)
+        let y_intcpt = point_1.y - slope*point_1.x
+        return above == (pnt_chk.x * slope + y_intcpt < pnt_chk.y)
     }
 
     var startTimer:CCNode?=nil
@@ -183,7 +197,7 @@ class GameScene: CCNode{
     
     func genFly(){
         print("creating fly")
-        let fly = FlyingFly.generateFly(2)
+        let fly = FlyRecycler.sharedInstance.getFly(2)
         flies.append(fly)
         addChild(fly)
     }
@@ -205,6 +219,7 @@ class GameScene: CCNode{
     
     func unpauseGame(){
         SceneManager.instance.hud.addChild(startTimer!)
+        
         SceneManager.instance.disableTouchForNode(self)
         SceneManager.instance.disableTouchForNode(SceneManager.instance.hud)
         startTimer!.animationManager!.runAnimationsForSequenceNamed("CountdownTimeline")
@@ -215,7 +230,6 @@ class GameScene: CCNode{
         for i in (0 ..< flies.count) {
             flies[i].paused = true
             flies[i].pauseBuzzing()
-            //flies[i].stopAllActions()
         }
     }
     func unpauseAllFlies(){

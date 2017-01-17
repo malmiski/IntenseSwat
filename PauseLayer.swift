@@ -20,7 +20,8 @@ class PauseLayer:CCNodeColor{
     
     
     func reset_selected(){
-        AudioManager.instance.stopEverything()
+        //GameManager.sharedInstance.currentScene!.unpauseGame()
+        //AudioManager.instance.stopEverything()
         SceneManager.instance.showGameSceneContinuous()
     }
     func return_selected(){
@@ -29,7 +30,7 @@ class PauseLayer:CCNodeColor{
     }
     
     func exit_selected(){
-        AudioManager.instance.stopEverything()
+        //AudioManager.instance.stopEverything()
         SceneManager.instance.showMainScene()
     }
 

@@ -451,6 +451,9 @@
 					7A5948D719E3795700F65F90 = {
 						CreatedOnToolsVersion = 6.0.1;
 					};
+					D309B21217EFE2EF00AA52C8 = {
+						LastSwiftMigration = 0800;
+					};
 				};
 			};
 			buildConfigurationList = D3E5F01A0AA32EAC004E361B /* Build configuration list for PBXProject "Chipmunk7-ios" */;
@@ -741,6 +744,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -764,6 +768,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

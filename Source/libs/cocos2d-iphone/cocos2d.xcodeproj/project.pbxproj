@@ -3051,6 +3051,9 @@
 			attributes = {
 				LastUpgradeCheck = 0600;
 				TargetAttributes = {
+					5018F24C0DFDEAC400C013A5 = {
+						LastSwiftMigration = 0800;
+					};
 					7A4037A719E37038007B6E8F = {
 						CreatedOnToolsVersion = 6.0.1;
 					};
@@ -3737,6 +3740,7 @@
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = cocos2d;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -3772,6 +3776,7 @@
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = cocos2d;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
 				ZERO_LINK = NO;
 			};
 			name = Release;

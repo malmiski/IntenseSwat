@@ -52,7 +52,8 @@ class FlyingFly: CCNode{
         let removeAction = CCActionCallBlock { () -> Void in
             // Since this fly got away decrease the players life
             GameManager.sharedInstance.currentScene!.decreaseLife()
-            fly.removeFromParent()
+            //fly.removeFromParent()
+            fly.killSelf(GameManager.sharedInstance.currentScene!, murdered: false)
         }
         let chainedAction = CCActionSequence(one:pathAction, two:removeAction)
         return chainedAction
@@ -66,12 +67,15 @@ class FlyingFly: CCNode{
         buzz.paused = false
     }
 //  Here we stop any actions on the fly, replace it with a the
-    func killSelf(caller:GameScene){
+    func killSelf(caller:GameScene, murdered:Bool=true){
         alive = false
         stopAllActions()
         removeFromParent()
-        buzz.stop()
-        AudioManager.instance.playFlySquishing()
+        buzz.paused = true
+        FlyRecycler.sharedInstance.recycleFly(self)
+        if(murdered){
+            AudioManager.instance.playFlySquishing()
+        }
 //      TODO: Add sprite for dead fly here:
 //
         //caller.removeFly(self)

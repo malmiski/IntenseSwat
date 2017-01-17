@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>53</integer>
+	<integer>66</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -110,7 +110,7 @@
 						<key>type</key>
 						<string>Check</string>
 						<key>value</key>
-						<false/>
+						<true/>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -323,7 +323,7 @@
 						<key>value</key>
 						<array>
 							<real>53</real>
-							<real>-56</real>
+							<real>-54</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -418,9 +418,9 @@
 				<key>customClass</key>
 				<string></string>
 				<key>displayName</key>
-				<string>CCNode</string>
+				<string>TopLeft Node</string>
 				<key>memberVarAssignmentName</key>
-				<string>node_1</string>
+				<string>top_left</string>
 				<key>memberVarAssignmentType</key>
 				<integer>2</integer>
 				<key>properties</key>
@@ -431,7 +431,7 @@
 						<key>type</key>
 						<string>StringSimple</string>
 						<key>value</key>
-						<string></string>
+						<string>TopLeft</string>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -485,6 +485,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -496,9 +498,9 @@
 				<key>customClass</key>
 				<string></string>
 				<key>displayName</key>
-				<string>CCNode</string>
+				<string>TopRight Node</string>
 				<key>memberVarAssignmentName</key>
-				<string>node_2</string>
+				<string>top_right</string>
 				<key>memberVarAssignmentType</key>
 				<integer>2</integer>
 				<key>properties</key>
@@ -509,7 +511,7 @@
 						<key>type</key>
 						<string>StringSimple</string>
 						<key>value</key>
-						<string></string>
+						<string>TopRight</string>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -574,9 +576,9 @@
 				<key>customClass</key>
 				<string></string>
 				<key>displayName</key>
-				<string>CCNode</string>
+				<string>BottomRight Node</string>
 				<key>memberVarAssignmentName</key>
-				<string>node_3</string>
+				<string>bottom_right</string>
 				<key>memberVarAssignmentType</key>
 				<integer>2</integer>
 				<key>properties</key>
@@ -587,7 +589,7 @@
 						<key>type</key>
 						<string>StringSimple</string>
 						<key>value</key>
-						<string></string>
+						<string>BottomRight</string>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -652,9 +654,9 @@
 				<key>customClass</key>
 				<string></string>
 				<key>displayName</key>
-				<string>CCNode</string>
+				<string>BottomLeft Node</string>
 				<key>memberVarAssignmentName</key>
-				<string>node_4</string>
+				<string>bottom_left</string>
 				<key>memberVarAssignmentType</key>
 				<integer>2</integer>
 				<key>properties</key>
@@ -665,7 +667,7 @@
 						<key>type</key>
 						<string>StringSimple</string>
 						<key>value</key>
-						<string></string>
+						<string>BottomLeft</string>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -879,7 +881,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.36666667461395264</real>
+			<real>0.0</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

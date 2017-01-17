@@ -112,6 +112,7 @@
 		BC5399DA1A44DCC90063F482 /* GLActivityKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC5399D51A44DCC90063F482 /* GLActivityKit.framework */; };
 		BC5399DB1A44DCC90063F482 /* JavaFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC5399D61A44DCC90063F482 /* JavaFoundation.framework */; };
 		BC5399DC1A44DCC90063F482 /* JavaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC5399D71A44DCC90063F482 /* JavaKit.framework */; };
+		C1F49D801E2AEAA4002566D8 /* FlyRecycler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F49D7F1E2AEAA4002566D8 /* FlyRecycler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -248,6 +249,7 @@
 		BC5399D51A44DCC90063F482 /* GLActivityKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLActivityKit.framework; path = "../../../../Library/Application Support/Developer/Shared/Xcode/Platforms/Android.platform/Developer/SDKs/SBAndroid.sdk/System/Library/Frameworks/GLActivityKit.framework"; sourceTree = "<group>"; };
 		BC5399D61A44DCC90063F482 /* JavaFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaFoundation.framework; path = "../../../../Library/Application Support/Developer/Shared/Xcode/Platforms/Android.platform/Developer/SDKs/SBAndroid.sdk/System/Library/Frameworks/JavaFoundation.framework"; sourceTree = "<group>"; };
 		BC5399D71A44DCC90063F482 /* JavaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaKit.framework; path = "../../../../Library/Application Support/Developer/Shared/Xcode/Platforms/Android.platform/Developer/SDKs/SBAndroid.sdk/System/Library/Frameworks/JavaKit.framework"; sourceTree = "<group>"; };
+		C1F49D7F1E2AEAA4002566D8 /* FlyRecycler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlyRecycler.swift; sourceTree = "<group>"; };
 		D352B48019EC608A00829775 /* MetalShaders */ = {isa = PBXFileReference; lastKnownFileType = folder; name = MetalShaders; path = Source/MetalShaders; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -498,6 +500,7 @@
 				58D6D4981C59EEA000D860CC /* PauseLayer.swift */,
 				582E5AA71C5AB3810084CC40 /* GameFinishLayer.swift */,
 				58C970681D3B3CD900DE375A /* AudioManager.swift */,
+				C1F49D7F1E2AEAA4002566D8 /* FlyRecycler.swift */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -676,6 +679,7 @@
 					};
 					B77F1B2D17B978D7009739AE = {
 						DevelopmentTeam = RD3TJRGTCR;
+						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
 								enabled = 0;
@@ -888,6 +892,7 @@
 				B73789871807631A0076A88C /* main.m in Sources */,
 				819B68091C3F3F1300A2F075 /* Swatter.swift in Sources */,
 				587CDCA51C2B7B60009F3D2F /* HUDBottomBar.swift in Sources */,
+				C1F49D801E2AEAA4002566D8 /* FlyRecycler.swift in Sources */,
 				7A046D7919E84ED5004C4763 /* MainScene.swift in Sources */,
 				58C970691D3B3CD900DE375A /* AudioManager.swift in Sources */,
 				587CDCA11C2B6417009F3D2F /* HUDStatusBar.swift in Sources */,
@@ -1208,6 +1213,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Source/Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1240,6 +1246,7 @@
 				PRODUCT_NAME = IntenseSwat;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Source/Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};

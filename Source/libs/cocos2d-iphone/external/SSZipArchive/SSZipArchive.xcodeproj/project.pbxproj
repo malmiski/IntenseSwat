@@ -431,6 +431,9 @@
 					7A59495A19E38BE500F65F90 = {
 						CreatedOnToolsVersion = 6.0.1;
 					};
+					83409DCD19D5B65B004B7EB9 = {
+						LastSwiftMigration = 0800;
+					};
 				};
 			};
 			buildConfigurationList = 21CC41A017DB7D1300201DDC /* Build configuration list for PBXProject "SSZipArchive" */;
@@ -707,6 +710,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -721,6 +725,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
